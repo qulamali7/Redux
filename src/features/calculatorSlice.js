@@ -18,6 +18,10 @@ export const caculatorSlice = createSlice({
           state.value = action.payload.num1 * action.payload.num2;
           break;
         case "/":
+          if (action.payload.num2===0) {
+            state.value="0 olmaz"
+            
+          }
           state.value = action.payload.num1 / action.payload.num2;
           break;
         default:
@@ -26,6 +30,6 @@ export const caculatorSlice = createSlice({
     },
   },
 });
-export const { calculator, total } = caculatorSlice.actions;
+export const { calculator } = caculatorSlice.actions;
 
 export default caculatorSlice.reducer;
